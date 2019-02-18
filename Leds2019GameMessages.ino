@@ -140,35 +140,35 @@ void Blink() {
   for ( int i = 0; i < 85; i++) {
     leds[i] = CRGB::Black;
   }
-  FastLED.show(); delay(500);
+  FastLED.show(); //delay(500);
     for ( int i = 0; i < 85; i++) {
     leds[i] = blinkBackup[i];
   }
- FastLED.show(); delay(500);  
+ FastLED.show();// delay(500);  
 
 
 }
 
-void loop() {
+void loop() { if (ColorRecieve != 82) {Blink();}
   // put your main code here, to run repeatedly:
-/*
+    if (ColorRecieve == 66) {
 leds[2] = CRGB::Red; leds[5] = CRGB::Red; leds[6] = CRGB::Red; leds[9] = CRGB::Red; leds[11] = CRGB::Red; leds[13] = CRGB::Red; leds[14] = CRGB::Red;
 leds[Sense(18)] = CRGB::Red; leds[Sense(20)] = CRGB::Red; leds[Sense(22)] = CRGB::Red; leds[Sense(24)] = CRGB::Red; leds[Sense(26)] = CRGB::Red; 
 leds[Sense(28)] = CRGB::Red; leds[Sense(32)] = CRGB::Red; leds[35] = CRGB::Red; leds[37] = CRGB::Red; leds[39] = CRGB::Red; leds[41] = CRGB::Red;
 leds[44] = CRGB::Red; leds[45] = CRGB::Red;  leds[49] = CRGB::Red; leds[Sense(52)] = CRGB::Red; leds[Sense(54)] = CRGB::Red; leds[Sense(58)] = CRGB::Red;
 leds[Sense(60)] = CRGB::Red;  leds[Sense(62)] = CRGB::Red;  leds[Sense(66)] = CRGB::Red; leds[70] = CRGB::Red; leds[73] = CRGB::Red; leds[74] = CRGB::Red;
 leds[78] = CRGB::Red; leds[81] = CRGB::Red; leds[82] = CRGB::Red;
-FastLED.show(); delay(10000);
-/*
+FastLED.show(); delay(1000); }
+    if (ColorRecieve == 97) {
 leds[3] = CRGB::Red; leds[5] = CRGB::Red; leds[6] = CRGB::Red; leds[7] = CRGB::Red; leds[9] = CRGB::Red; leds[10] = CRGB::Red; leds[11] = CRGB::Red;
 leds[13] = CRGB::Red; leds[15] = CRGB::Red; leds[Sense(20)] = CRGB::Red; leds[Sense(24)] = CRGB::Red; leds[Sense(28)] = CRGB::Red; leds[Sense(30)] = CRGB::Red;
 leds[Sense(32)] = CRGB::Red; leds[35] = CRGB::Red; leds[36] = CRGB::Red; leds[37] = CRGB::Red; leds[41] = CRGB::Red; leds[43] = CRGB::Red; leds[44] = CRGB::Red;
 leds[45] = CRGB::Red; leds[47] = CRGB::Red; leds[48] = CRGB::Red; leds[49] = CRGB::Red; leds[Sense(52)] = CRGB::Red; leds[Sense(54)] = CRGB::Red;
 leds[Sense(58)] = CRGB::Red; leds[Sense(62)] = CRGB::Red; leds[Sense(64)] = CRGB::Red; leds[Sense(66)] = CRGB::Red; leds[69] = CRGB::Red; leds[70] = CRGB::Red;
 leds[71] = CRGB::Red; leds[75] = CRGB::Red; leds[77] = CRGB::Red; leds[78] = CRGB::Red; leds[79] = CRGB::Red; leds[81] = CRGB::Red; leds[83] = CRGB::Red;
-FastLED.show(); delay(10000);
-
-
+FastLED.show(); delay(1000); 
+}
+    if (ColorRecieve == 101) {
 leds[0] = CRGB::Red; leds[2] = CRGB::Red; leds[4] = CRGB::Red; leds[5] = CRGB::Red; leds[8] = CRGB::Red; leds[10] = CRGB::Red; leds[12] = CRGB::Red;
 leds[14] = CRGB::Red; leds[16] = CRGB::Red; leds[Sense(17)] = CRGB::Red; leds[Sense(19)] = CRGB::Red; leds[Sense(23)] = CRGB::Red; leds[Sense(25)] = CRGB::Red;
 leds[Sense(27)] = CRGB::Red; leds[Sense(29)] = CRGB::Red; leds[Sense(31)] = CRGB::Red; leds[Sense(33)] = CRGB::Red; leds[34] = CRGB::Red; leds[35] = CRGB::Red;
@@ -176,10 +176,10 @@ leds[36] = CRGB::Red; leds[40] = CRGB::Red; leds[42] = CRGB::Red; leds[44] = CRG
 leds[49] = CRGB::Red; leds[50] = CRGB::Red; leds[Sense(51)] = CRGB::Red; leds[Sense(53)] = CRGB::Red; leds[Sense(57)] = CRGB::Red; leds[Sense(59)] = CRGB::Red;
 leds[Sense(61)] = CRGB::Red; leds[Sense(63)] = CRGB::Red; leds[Sense(65)] = CRGB::Red; leds[Sense(67)] = CRGB::Red; leds[68] = CRGB::Red; leds[70] = CRGB::Red;
 leds[72] = CRGB::Red; leds[73] = CRGB::Red; leds[75] = CRGB::Red; leds[76] = CRGB::Red; leds[77] = CRGB::Red; leds[79] = CRGB::Red;  leds[82] = CRGB::Red;
- leds[84] = CRGB::Red;
-FastLED.show(); delay(10000);
-
-*/
+leds[84] = CRGB::Red;
+FastLED.show(); delay(1000);
+}
+  if (ColorRecieve == 82) {
 ScrollV(CRGB::Black,74,-1); ScrollV(CRGB::Black,78,-1);
 ScrollV(CRGB::Black,75,-1); ScrollV(CRGB::Black,77,-1);
 ScrollV(CRGB::Red,76,-1);
@@ -209,5 +209,5 @@ ScrollV(0x110000,74,-1); ScrollV(0x110000,78,-1);
 ScrollV(0x000000,75,-1); ScrollV(0x000000,77,-1);
 ScrollV(0x000000,76,-1);
 FastLED.show(); delay(100);
-ScrollV(0x110000,73,-1); ScrollV(0x110000,79,-1); 
+ScrollV(0x110000,73,-1); ScrollV(0x110000,79,-1); }
 }
